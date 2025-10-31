@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Language Notes</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+        }
+        pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #3498db;
+        }
+        pre code {
+            background: none;
+            color: #ecf0f1;
+            padding: 0;
+        }
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px 15px;
+            margin: 15px 0;
+        }
+        .important {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 10px 15px;
+            margin: 15px 0;
+        }
+        .example {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 10px 15px;
+            margin: 15px 0;
+        }
+        .practice {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 10px 15px;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #3498db;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>C Programming Language - Complete Notes</h1>
+
+        <h2>1. Introduction to C</h2>
+        <p>C is a general-purpose, procedural programming language developed by Dennis Ritchie in 1972 at Bell Labs. It's widely used for system programming, embedded systems, and application development.</p>
+        
+        <h3>Basic Structure of a C Program - Detailed Explanation</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}</code></pre>
+
+        <h4>Let's understand each part:</h4>
+        
+        <p><strong>1. #include &lt;stdio.h&gt;</strong></p>
+        <ul>
+            <li>This is a <strong>preprocessor directive</strong></li>
+            <li>It tells the compiler to include the standard input-output library</li>
+            <li>stdio.h contains declarations for printf(), scanf(), and other I/O functions</li>
+            <li>The # symbol indicates it's processed before compilation</li>
+            <li>Without this, you can't use printf() or scanf()</li>
+        </ul>
+
+        <p><strong>2. int main()</strong></p>
+        <ul>
+            <li><strong>int</strong> - return type of the function (returns an integer)</li>
+            <li><strong>main</strong> - name of the function; every C program must have exactly one main() function</li>
+            <li><strong>()</strong> - parentheses can contain parameters; empty means no parameters</li>
+            <li>This is the <strong>entry point</strong> of the program - execution starts here</li>
+        </ul>
+
+        <p><strong>3. { } - Curly Braces</strong></p>
+        <ul>
+            <li>These define the <strong>body</strong> of the function</li>
+            <li>All code inside these braces belongs to the main() function</li>
+            <li>Every opening brace { must have a closing brace }</li>
+        </ul>
+
+        <p><strong>4. printf("Hello, World!\n");</strong></p>
+        <ul>
+            <li><strong>printf()</strong> - function to print output to the screen</li>
+            <li><strong>"Hello, World!"</strong> - string to be printed (enclosed in double quotes)</li>
+            <li><strong>\n</strong> - escape sequence for newline (moves cursor to next line)</li>
+            <li><strong>;</strong> - semicolon marks the end of a statement (required!)</li>
+        </ul>
+
+        <p><strong>5. return 0;</strong></p>
+        <ul>
+            <li>Returns the value 0 to the operating system</li>
+            <li>0 typically means the program executed successfully</li>
+            <li>Non-zero values indicate errors</li>
+            <li>Must match the return type of main() (int)</li>
+        </ul>
+
+        <div class="note">
+            <strong>How the Program Executes:</strong>
+            <ol>
+                <li>Preprocessor includes stdio.h library</li>
+                <li>Compiler compiles the code into machine language</li>
+                <li>Linker links the object code with libraries</li>
+                <li>Operating system loads the program into memory</li>
+                <li>Execution starts from main() function</li>
+                <li>printf() displays "Hello, World!" on screen</li>
+                <li>return 0 sends success code to OS</li>
+                <li>Program terminates</li>
+            </ol>
+        </div>
+
+        <div class="practice">
+            <strong>🎯 Practice Questions:</strong>
+            <ol>
+                <li>Write a program to print your name, age, and city on separate lines</li>
+                <li>Write a program that prints "Welcome to C Programming" five times</li>
+                <li>Create a program that displays a simple pattern using asterisks (*)</li>
+            </ol>
+        </div>
+
+        <h2>2. Data Types</h2>
+        <p>Data types specify the type of data a variable can store. C has several built-in data types:</p>
+        <table>
+            <tr>
+                <th>Data Type</th>
+                <th>Size</th>
+                <th>Range</th>
+                <th>Format Specifier</th>
+            </tr>
+            <tr>
+                <td>char</td>
+                <td>1 byte</td>
+                <td>-128 to 127</td>
+                <td>%c</td>
+            </tr>
+            <tr>
+                <td>unsigned char</td>
+                <td>1 byte</td>
+                <td>0 to 255</td>
+                <td>%c</td>
+            </tr>
+            <tr>
+                <td>int</td>
+                <td>2 or 4 bytes</td>
+                <td>-32,768 to 32,767 or -2,147,483,648 to 2,147,483,647</td>
+                <td>%d or %i</td>
+            </tr>
+            <tr>
+                <td>unsigned int</td>
+                <td>2 or 4 bytes</td>
+                <td>0 to 65,535 or 0 to 4,294,967,295</td>
+                <td>%u</td>
+            </tr>
+            <tr>
+                <td>float</td>
+                <td>4 bytes</td>
+                <td>1.2E-38 to 3.4E+38 (6 decimal places)</td>
+                <td>%f</td>
+            </tr>
+            <tr>
+                <td>double</td>
+                <td>8 bytes</td>
+                <td>2.3E-308 to 1.7E+308 (15 decimal places)</td>
+                <td>%lf</td>
+            </tr>
+            <tr>
+                <td>long int</td>
+                <td>4 or 8 bytes</td>
+                <td>-2,147,483,648 to 2,147,483,647 or larger</td>
+                <td>%ld</td>
+            </tr>
+        </table>
+
+        <div class="practice">
+            <strong>🎯 Practice Questions:</strong>
+            <ol>
+                <li>Write a program to find the size of different data types using sizeof() operator</li>
+                <li>Create a program that stores your age (int), height (float), and grade (char) and displays them</li>
+                <li>Write a program to calculate the area of a circle (use double for precision)</li>
+            </ol>
+        </div>
+
+        <h2>3. Variables and Constants</h2>
+        <h3>Variable Declaration and Initialization</h3>
+        <pre><code>// Declaration
+int age;
+
+// Initialization
+age = 25;
+
+// Declaration + Initialization
+int age = 25;
+float salary = 50000.50;
+char grade = 'A';
+double pi = 3.14159265359;</code></pre>
+
+        <h3>Constants</h3>
+        <pre><code>// Using #define (preprocessor)
+#define PI 3.14159
+#define MAX_SIZE 100
+
+// Using const keyword
+const int MAX_VALUE = 100;
+const float GRAVITY = 9.8;</code></pre>
+
+        <div class="practice">
+            <strong>🎯 Practice Questions:</strong>
+            <ol>
+                <li>Write a program to swap two numbers using a third variable</li>
+                <li>Calculate simple interest using principal, rate, and time as variables</li>
+                <li>Convert temperature from Celsius to Fahrenheit</li>
+            </ol>
+        </div>
+
+        <h2>4. Input and Output</h2>
+        <h3>Taking Integer Input</h3>
+        <pre><code>int num;
+printf("Enter a number: ");
+scanf("%d", &num);  // & is the address-of operator</code></pre>
+
+        <h3>Taking String Input</h3>
+        <pre><code>// Method 1: Using scanf (reads until space)
+char name[50];
+scanf("%s", name);
+
+// Method 2: Using fgets (recommended - safe)
+fgets(name, 50, stdin);
+
+// Method 3: Reading line with spaces
+scanf("%[^\n]", name);  // Reads until newline
+
+// Method 4: Reading with spaces using scanf
+char name[50];
+scanf(" %[^\n]s", name);  // Space before % consumes previous newline</code></pre>
+
+        <div class="example">
+            <strong>Complete Input/Output Example:</strong>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char name[50];
+    int age;
+    float height;
+    
+    printf("Enter your name: ");
+    scanf("%[^\n]", name);  // Reads name with spaces
+    
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    
+    printf("Enter your height (in meters): ");
+    scanf("%f", &height);
+    
+    printf("\n--- Your Details ---\n");
+    printf("Name: %s\n", name);
+    printf("Age: %d years\n", age);
+    printf("Height: %.2f meters\n", height);
+    
+    return 0;
+}</code></pre>
+        </div>
+
+        <div class="practice">
+            <strong>🎯 Practice Questions:</strong>
+            <ol>
+                <li>Write a program to take two numbers as input and display their sum, difference, product, and quotient</li>
+                <li>Create a program that takes length and breadth of a rectangle and calculates area and perimeter</li>
+                <li>Write a program to convert days into years, weeks, and remaining days</li>
+            </ol>
+        </div>
+
+        <h2>5. Operators in Detail</h2>
+        
+        <h3>5.1 Arithmetic Operators</h3>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Name</th>
+                <th>Example</th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <td>+</td>
+                <td>Addition</td>
+                <td>5 + 3</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Subtraction</td>
+                <td>5 - 3</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>Multiplication</td>
+                <td>5 * 3</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>/</td>
+                <td>Division</td>
+                <td>5 / 2</td>
+                <td>2 (integer division)</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>Modulus (remainder)</td>
+                <td>5 % 2</td>
+                <td>1</td>
+            </tr>
+        </table>
+
+        <h3>5.2 Relational Operators</h3>
+        <p>Used to compare two values. Returns 1 (true) or 0 (false)</p>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Name</th>
+                <th>Example</th>
+                <th>Result (if a=5, b=3)</th>
+            </tr>
+            <tr>
+                <td>==</td>
+                <td>Equal to</td>
+                <td>a == b</td>
+                <td>0 (false)</td>
+            </tr>
+            <tr>
+                <td>!=</td>
+                <td>Not equal to</td>
+                <td>a != b</td>
+                <td>1 (true)</td>
+            </tr>
+            <tr>
+                <td>&gt;</td>
+                <td>Greater than</td>
+                <td>a &gt; b</td>
+                <td>1 (true)</td>
+            </tr>
+            <tr>
+                <td>&lt;</td>
+                <td>Less than</td>
+                <td>a &lt; b</td>
+                <td>0 (false)</td>
+            </tr>
+            <tr>
+                <td>&gt;=</td>
+                <td>Greater than or equal</td>
+                <td>a &gt;= b</td>
+                <td>1 (true)</td>
+            </tr>
+            <tr>
+                <td>&lt;=</td>
+                <td>Less than or equal</td>
+                <td>a &lt;= b</td>
+                <td>0 (false)</td>
+            </tr>
+        </table>
+
+        <h3>5.3 Logical Operators</h3>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Name</th>
+                <th>Example</th>
+                <th>True When</th>
+            </tr>
+            <tr>
+                <td>&&</td>
+                <td>Logical AND</td>
+                <td>a && b</td>
+                <td>Both a and b are true (non-zero)</td>
+            </tr>
+            <tr>
+                <td>||</td>
+                <td>Logical OR</td>
+                <td>a || b</td>
+                <td>At least one is true</td>
+            </tr>
+            <tr>
+                <td>!</td>
+                <td>Logical NOT</td>
+                <td>!a</td>
+                <td>a is false (zero)</td>
+            </tr>
+        </table>
+
+        <h3>5.4 Bitwise Operators</h3>
+        <p>Operate on individual bits of integers</p>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Name</th>
+                <th>Example</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>&</td>
+                <td>Bitwise AND</td>
+                <td>a & b</td>
+                <td>Sets bit to 1 if both bits are 1</td>
+            </tr>
+            <tr>
+                <td>|</td>
+                <td>Bitwise OR</td>
+                <td>a | b</td>
+                <td>Sets bit to 1 if any bit is 1</td>
+            </tr>
+            <tr>
+                <td>^</td>
+                <td>Bitwise XOR</td>
+                <td>a ^ b</td>
+                <td>Sets bit to 1 if bits are different</td>
+            </tr>
+            <tr>
+                <td>~</td>
+                <td>Bitwise NOT</td>
+                <td>~a</td>
+                <td>Inverts all bits</td>
+            </tr>
+            <tr>
+                <td>&lt;&lt;</td>
+                <td>Left shift</td>
+                <td>a &lt;&lt; 2</td>
+                <td>Shifts bits left by 2 (multiplies by 4)</td>
+            </tr>
+            <tr>
+                <td>&gt;&gt;</td>
+                <td>Right shift</td>
+                <td>a &gt;&gt; 2</td>
+                <td>Shifts bits right by 2 (divides by 4)</td>
+            </tr>
+        </table>
+
+        <div class="example">
+            <strong>Bitwise Operators Example:</strong>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 5;   // Binary: 0101
+    int b = 3;   // Binary: 0011
+    
+    printf("a & b = %d\n", a & b);   // 0001 = 1
+    printf("a | b = %d\n", a | b);   // 0111 = 7
+    printf("a ^ b = %d\n", a ^ b);   // 0110 = 6
+    printf("~a = %d\n", ~a);         // Inverts all bits
+    printf("a << 1 = %d\n", a << 1); // 1010 = 10
+    printf("a >> 1 = %d\n", a >> 1); // 0010 = 2
+    
+    return 0;
+}</code></pre>
+        </div>
+
+        <h3>5.5 Assignment Operators</h3>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Example</th>
+                <th>Equivalent To</th>
+            </tr>
+            <tr>
+                <td>=</td>
+                <td>a = 5</td>
+                <td>a = 5</td>
+            </tr>
+            <tr>
+                <td>+=</td>
+                <td>a += 3</td>
+                <td>a = a + 3</td>
+            </tr>
+            <tr>
+                <td>-=</td>
+                <td>a -= 3</td>
+                <td>a = a - 3</td>
+            </tr>
+            <tr>
+                <td>*=</td>
+                <td>a *= 3</td>
+                <td>a = a * 3</td>
+            </tr>
+            <tr>
+                <td>/=</td>
+                <td>a /= 3</td>
+                <td>a = a / 3</td>
+            </tr>
+            <tr>
+                <td>%=</td>
+                <td>a %= 3</td>
+                <td>a = a % 3</td>
+            </tr>
+            <tr>
+                <td>&=</td>
+                <td>a &= 3</td>
+                <td>a = a & 3</td>
+            </tr>
+            <tr>
+                <td>|=</td>
+                <td>a |= 3</td>
+                <td>a = a | 3</td>
+            </tr>
+        </table>
+
+        <h3>5.6 Increment and Decrement Operators</h3>
+        <pre><code>int a = 5;
+
+// Post-increment: use value first, then increment
+int b = a++;  // b = 5, a = 6
+
+// Pre-increment: increment first, then use value
+int c = ++a;  // a = 7, c = 7
+
+// Post-decrement
+int d = a--;  // d = 7, a = 6
+
+// Pre-decrement
+int e = --a;  // a = 5, e = 5</code></pre>
+
+        <h3>5.7 Ternary Operator (Conditional Operator)</h3>
+        <p>Syntax: <code>condition ? value_if_true : value_if_false</code></p>
+        <pre><code>int a = 10, b = 20;
+int max = (a > b) ? a : b;  // max = 20
+
+// Another example
+int age = 18;
+char* status = (age >= 18) ? "Adult" : "Minor";
+
+// Nested ternary
+int x = 5;
+char* result = (x > 0) ? "Positive" : (x < 0) ? "Negative" : "Zero";</code></pre>
+
+        <div class="example">
+            <strong>Ternary Operator Program:</strong>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    // Check even or odd
+    (num % 2 == 0) ? printf("%d is Even\n", num) : printf("%d is Odd\n", num);
+    
+    // Find maximum of three numbers
+    int a = 15, b = 25, c = 20;
+    int max = (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);
+    printf("Maximum: %d\n", max);
+    
+    return 0;
+}</code></pre>
+        </div>
+
+        <div class="practice">
+            <strong>🎯 Practice Questions:</strong>
+            <ol>
+                <li>Write a program to check if a number is even or odd using ternary operator</li>
+                <li>Find the largest of three numbers using ternary operator</li>
+                <li>Check if a year is leap year or not using bitwise operators</li>
+                <li>Swap two numbers without using a third variable (use bitwise XOR)</li>
+                <li>Write a program to count number of set bits (1s) in a number</li>
+            </ol>
+        </div>
+
+        <h2>6. Control Structures</h2>
+        <h3>6.1 If-Else Statement</h3>
+        <pre><code>if (condition) {
+    // code executes if condition is true
+} else if (another_condition) {
+    // code executes if another_condition is true
+} else {
+    // code executes if all conditions are false
+}</code></pre>
+
+        <div class="example">
+            <strong>Example: Grade Calculator</strong>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int marks;
+    printf("Enter marks: ");
+    scanf("%d", &marks);
+    
+    if (marks >= 90) {
+        printf("Grade: A+\n");
+    } else if (marks >= 80) {
+        printf("Grade: A\n");
+    } else if (marks >= 70) {
+        printf("Grade: B\n");
+    } else if (marks >= 60) {
+        printf("Grade: C\n");
+    } else if (marks >= 50) {
+        printf("Grade: D\n");
+    } else {
+        printf("Grade: F\n");
+    }
+    
+    return 0;
+}</code></pre>
+        </div>
+
+        <h3>6.2 Switch Statement</h3>
+        <pre><code>switch (variable) {
+    case value1:
+        // code
+        break;
+    case value2:
+        // code
+        break;
+    default:
+        // code if no case matches
+}</code></pre>
+
+        <div class="example">
+            <strong>Example: Simple Calculator</strong>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char op;
+    double num1, num2;
+    
+    printf("Enter operator (+, -, *, /): ");
+    scanf("%c", &op);
+    
+    printf("Enter two numbers: ");
+    scanf("%lf %lf", &num1, &num2);
+    
+    switch(op) {
+        case '+':
+            printf("%.2lf + %.2lf = %.2lf\n", num1, num2, num1 + num2);
+            break;
+        case '-':
+            printf("%.2lf - %.2lf = %.2lf\n", num1, num2, num1 - num2);
+            break;
+        case '*':
+            printf("%.2lf * %.2lf = %.2lf\n", num1, num2, num1 * num2);
+            break;
+        case '/':
+            if(num2 != 0)
+                printf("%.2lf / %.2lf = %.2lf\n", num1, num2, num1 / num2);
+            else
+                printf("Error: Division by zero!\n");
+            break;
+        default:
+            printf("Invalid operator!\n");
+    }
+    
+    return 0;
+}</code></pre>
+        </div>
+
+        <div class="practice">
+            <strong>🎯 Practice Questions:</strong>
+            <ol>
+                <li>Write a program to check if a number is positive, negative, or zero</li>
+                <li>Check if a person is eligible for voting (age >= 18)</li>
+                <li>Find the greatest of three numbers</li>
+                <li>Check if a triangle is valid (sum of any two sides > third side)</li>
+                <li>Create a menu-driven program using switch for basic arithmetic operations</li>
+            </ol>
+        </div>
+
+        <h2>7. Loops</h2>
+        <h3>7.1 For Loop</h3>
+        <p>Used when you know the number of iterations in advance</p>
+        <pre><code>for (initialization; condition; increment/decrement) {
+    // code to repeat
+}
+
+// Example
+for (int i = 0; i < 10; i++) {
+    printf("%d ", i);
+}</code></pre>
+
+        <div class="example">
+            <strong>Example: Multiplication Table</strong>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    printf("Multiplication table of %d:\n", num);
+    for(int i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", num, i, num * i);
+    }
+    
+    return 0;
+}</code></pre>
+        </div>
+
+        <h3>7.2 While Loop</h3>
+        <p>Used when you don't know the number of iterations; checks condition first</p>
+        <pre><code>initialization;
+while (condition) {
+    // code to repeat
+    increment/decrement;
+}</code></pre>
+
+        <div class="example">
+            <strong>Example: Sum of Digits</strong>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int num, sum = 0, digit;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    int temp = num;
+    while(temp > 0) {
+        digit = temp % 10;  // Get last digit
+        sum += digit;
+        temp /= 10;  // Remove last digit
+    }
+    
+    printf("Sum of digits of %d = %d\n", num, sum);
+    return 0;
+}</code></pre>
+        </div>
+
+        <h3>7.3 Do-While Loop</h3>
+        <p>Executes at least once; checks condition at the end</p>
+        <pre><code>initialization;
+do {
+    // code to repeat
+    increment/decrement;
+} while (condition);</code></pre>
+
+        <div class="example">
+            <strong>Example: Menu-Driven Program</strong>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int choice;
+    
+    do {
+        printf("\n--- MENU ---\n");
+        printf("1. Print Hello\n");
+        printf("2. Print Goodbye\n");
+        printf("3. Exit\n");
+        printf("Enter choice: ");
+        scanf("%d", &choice);
+        
+        switch(choice) {
+            case 1:
+                printf("Hello, World!\n");
+                break;
+            case 2:
+                printf("Goodbye!\n");
+                break;
+            case 3:
+                printf("Exiting...\n");
+                break;
+            default:
+                printf("Invalid choice!\n");
+        }
+    } while(choice != 3);
+    
+    return 0;
+}</code></pre>
+        </div>
+
+        <div class="practice">
+            <strong>🎯 Practice Questions:</strong>
+            <ol>
+                <li><strong>Factorial:</strong> Find factorial of a number</li>
+                <li><strong>Fibonacci Series:</strong> Print first n Fibonacci numbers (0, 1, 1, 2, 3, 5, 8...)</li>
+                <li><strong>Prime Number:</strong> Check if a number is prime</li>
+                <li><strong>Armstrong Number:</strong> Check if a number is Armstrong (153 = 1³ + 5³ + 3³)</li>
+                <li><strong>Palindrome:</strong> Check if a number is palindrome (121, 12321 are palindromes)</li>
+                <li><strong>Reverse Number:</strong> Reverse the digits of a number</li>
+                <li><strong>GCD/HCF:</strong> Find GCD of two numbers using Euclidean algorithm</li>
+                <li><strong>LCM:</strong> Find LCM of two numbers</li>
+                <li><strong>Perfect Number:</strong> Check if a number is perfect (6 = 1+2+3)</li>
+                <li><strong>Sum of Series:</strong> Calculate sum 1 + 1/2 + 1/3 + ... + 1/n</li>
+            </ol>
+        </div>
+
+        <div class="example">
+            <strong>Solution: Armstrong Number</strong>
+            <pre><code>#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main() {
+    int num, temp, remainder, sum = 0, digits = 0;
+    
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    temp = num;
+    
+    // Count digits
+    while(temp != 0) {
+        digits++;
+        temp /= 10;
+    }
+    
+    temp = num;
+    
+    // Calculate sum of digits raised to power of number of digits
+    while(temp != 0) {
+        remainder = temp % 10;
+        sum += pow(remainder, digits);
+        temp /= 10;
+    }
+    
+    if(sum == num)
+        printf("%d is an Armstrong number\n", num);
+    else
+        printf("%d is not an Armstrong number\n", num);
+    
+    return 0;
+}</code></pre>
+        </div>
+
+        <div class="example">
+            <strong>Solution: Palindrome Number</strong>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int num, temp, reverse = 0, remainder;
+    
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    temp = num;
+    
+    // Reverse the number
+    while(temp != 0) {
+        remainder = temp % 10;
+        reverse = reverse * 10 + remainder;
+        temp /= 10;
+    }
+    
+    if(reverse == num)
+        printf("%d is a palindrome\n", num);
+    else
+        printf("%d is not a palindrome\n", num);
+    
+    return 0;
+}</code></pre>
+        </div>
+
+        <h2>8. Functions</h2>
+        <p>Functions are reusable blocks of code that perform specific tasks</p>
+        <pre><code>// Function declaration (prototype)
+return_type function_name(parameter_list);
+
+// Function definition
+return_type function_name(parameter_list) {
+    // function body
+    return value;
+}
+
+// Function call
+function_name(arguments);</code></pre>
+
+        <div class="example">
+            <strong>Example: Prime Number Function</strong>
+            <pre><code>#include &lt;stdio.h&gt;
+
+// Function to check if a number is prime
+int isPrime(int n) {
+    if(n <= 1) 
+        return 0;  // false
+    
+    for(int i = 2; i * i <= n; i++) {
+        if(n % i == 0)
+            return 0;  // false
+    }
+    return 1;  // true
+}
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    if(isPrime(num))
+        printf("%d is a prime number\n", num);
+    else
+        printf("%d is not a prime number\n", num);
+    
+    return 0;
+}</code></pre>
+        </div>
+
+        <div class="practice">
+            <strong>🎯 Practice Questions:</strong>
+            <ol>
+                <li>Write a function to calculate factorial of a number</li>
+                <li>Create a function to check if a number is Armstrong or not</li>
+                <li>Write a function to find GCD of two numbers</li>
+                <li>Create a function to swap two numbers using call by reference (pointers)</li>
+                <li>Write a function to convert decimal to binary</li>
+            </ol>
+        </div>
+
+        <h2>9. Arrays</h2>
+        <h3>9.1 One-Dimensional Array</h3>
+        <p>Collection of elements of the same data type stored in contiguous memory</p>
+        <pre><code>// Declaration
+int numbers[5];
+
+// Declaration with initialization
+int numbers[5] = {1, 2, 3, 4, 5};
+
+// Partial initialization
+int numbers[5] = {1, 2};  // Rest are 0
+
+// Size determined automatically
+int numbers[] = {1, 2, 3, 4, 5};
+
+// Accessing elements (index starts from 0)
+int first = numbers[0];
+numbers[2] = 10;</code></pre>
+
+        <div class="example">
+            <strong>Example: Find Largest Element</strong>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int n;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    
+    int

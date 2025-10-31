@@ -1,15 +1,50 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    // int a=5,b=10;
-    // printf("a-b= %d\n",a-b);
-    int a,b;
-    printf("Enter two values");
+//     int salary;
+//  printf("enter the salery");
+//  scanf("%d/n", &salary);
+//  printf("%d ",salary);
 
-    scanf("%d %d",&a,&b);
-    printf("a+b= %d\n",a+b);
-    printf("a-b= %d\n",a-b);
-    printf("a*b= %d\n",a*b);
-    printf("a/b= %d\n",a/b);
-    return 0;
+
+//     if (salary >12000){
+//         printf("go for the party");
+        
+//     }else{
+//         printf("dont go for party");
+//     }
+
+// int a=0;
+// if(a>0)
+// {
+// printf("positive num");
+// }
+// else if(a==0) {
+//  printf("it is zero");
+// }
+// else
+// {
+//     printf("negitive number");
+// }
+
+
+int a=70;
+if (a%2==0){
+    printf("even");
+}
+else 
+{
+    printf("odd");
+}
+
+
+if (a<35)
+{
+    printf("fail");
+}
+else
+{
+    printf("pass");
+}
+return 0;
 }

@@ -17,10 +17,16 @@ int main()
     //  char ch='*';
     //  printf("%d %.2f %c",a,b,ch);
 
+    // char name[10];
+    // printf("Enter name\n");
+    // scanf("%s",&name);
+    // printf("your name is %s",name);
+
+
     //
-    printf("my name is sanisha\tch \n");
-    printf("my name is sanisha\\ch \n");
-    printf("and that's how we write \"c lenguage\" :\n");  
+    // printf("my name is sanisha\tch \n");
+    // printf("my name is sanisha\\ch \n");
+    // printf("and that's how we write \"c lenguage\" :\n");  
 
 
     // Oprators     
@@ -48,6 +54,52 @@ int main()
     // printf("AND OP: %d\n",(a>0) && (b<0));
     // printf("or OP: %d\n",(a>0) || (b<0)); 
     // printf("not OP: %d\n",!(a>0)); 
+
+    // Assignment Operators
+    // int a=2;
+    // printf("a= %d\n",a);
+    // // a=a+2;
+    // a+=2;
+    // printf("a= %d\n",a);
+    // a-=2;
+    // printf("a= %d\n",a);
+    // a*=4;
+    // printf("a= %d\n",a);
+    // a/=4;
+    // printf("a= %d\n",a);
+
+
+    // condition
+    // int num=2;
+    // if(num%2==0){
+    //     printf("even");
+    // }else{
+    //     printf("odd");
+    // }
+
+    // int age;
+    // printf("enter the no= ");
+    // scanf("%d",&age);
+    //  printf("age is %d\n",age);
+
+    //  if(age>18){
+    //     printf("You can vote");
+    //  }else{
+    //     printf("You can't vote");
+    //  }
+
+    //  if(age>18){
+    //     printf("You can vote");
+    //  }else if(age==18){
+    //     printf("get ready for your first vote");
+    //  }     
+    //  else{
+    //     printf("You can't vote");
+    //  }
+    // int salery;
+    
+
+    
 return 0;
 }
 
