@@ -1,50 +1,63 @@
 #include <stdio.h>
 int main()
 {
-//     int salary;
-//  printf("enter the salery");
-//  scanf("%d/n", &salary);
-//  printf("%d ",salary);
+// //     int salary;
+// //  printf("enter the salery");
+// //  scanf("%d/n", &salary);
+// //  printf("%d ",salary);
 
 
-//     if (salary >12000){
-//         printf("go for the party");
+// //     if (salary >12000){
+// //         printf("go for the party");
         
-//     }else{
-//         printf("dont go for party");
-//     }
+// //     }else{
+// //         printf("dont go for party");
+// //     }
 
-// int a=0;
-// if(a>0)
-// {
-// printf("positive num");
+// // int a=0;
+// // if(a>0)
+// // {
+// // printf("positive num");
+// // }
+// // else if(a==0) {
+// //  printf("it is zero");
+// // }
+// // else
+// // {
+// //     printf("negitive number");
+// // }
+
+
+// int a=70;
+// if (a%2==0){
+//     printf("even");
 // }
-// else if(a==0) {
-//  printf("it is zero");
+// else 
+// {
+//     printf("odd");
+// }
+
+
+// if (a<35)
+// {
+//     printf("fail");
 // }
 // else
 // {
-//     printf("negitive number");
+//     printf("pass");
 // }
 
+int num=4;
+printf("num =%d\n",num); //4//
+num++;  //post
+printf("num =%d\n",num); //5
+printf("num =%d\n",num++);  //5
+printf("num =%d\n",num); //6
+printf("num =%d\n",++num);//7
+printf("num =%d\n",num--); //7
+printf("num =%d\n",--num);
 
-int a=70;
-if (a%2==0){
-    printf("even");
-}
-else 
-{
-    printf("odd");
-}
 
 
-if (a<35)
-{
-    printf("fail");
-}
-else
-{
-    printf("pass");
-}
 return 0;
 }

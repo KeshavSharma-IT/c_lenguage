@@ -7,7 +7,6 @@ int main(){
      this is 
     multiline comment
     */
-
     // int a=12;
     // float height=12.2;
     // char c='A';
@@ -91,14 +90,20 @@ int main(){
     
     // Increment and Decrement 
     
-    int a=5,b;
-    b=a++;
-    printf("a = %d, b = %d\n", a, b);
+    // int a=5,b;
+    // b=a++;
+    // printf("a = %d, b = %d\n", a, b);
 
-    a=5;
-    b=++a;
-    printf("a = %d, b = %d\n", a, b);
+    // a=5;
+    // b=++a;
+    // printf("a = %d, b = %d\n", a, b);
 
+
+    int i=1;
+    printf("%d\n",i++);   //(after use value increase)
+    printf("%d\n",i);  
+
+    printf("%d\n",++i);    // increse then use
 
 
 
