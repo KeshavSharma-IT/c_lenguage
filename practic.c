@@ -54,7 +54,7 @@ printf("num =%d\n",num); //5
 printf("num =%d\n",num++);  //5
 printf("num =%d\n",num); //6
 printf("num =%d\n",++num);//7
-printf("num =%d\n",num--); //7
+printf("num =%d\n",num--);
 printf("num =%d\n",--num);
 
 
