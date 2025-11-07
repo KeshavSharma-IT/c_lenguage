@@ -83,20 +83,20 @@
 
 
 //final code
-#include <stdio.h>
-void main(){
-    int num=5, fact = 1;
+// #include <stdio.h>
+// void main(){
+//     int num=5, fact = 1;
 
-    // printf("Enter a number: ");
-    // scanf("%d", &num);
+//     // printf("Enter a number: ");
+//     // scanf("%d", &num);
 
-    while(num > 0){
-        fact = fact * num;
-        num = num - 1;
-    }
+//     while(num > 0){
+//         fact = fact * num;
+//         num = num - 1;
+//     }
 
-    printf("Factorial = %d", fact);
-}
+//     printf("Factorial = %d", fact);
+// }
 
 
 
@@ -159,7 +159,7 @@ void main(){
 // #include <math.h>
 
 // void main(){
-//     int num, originalNum, temp, digit, count = 0;
+//     int num=123, originalNum, temp, digit, count = 0;
 //     double sum = 0;   // use double for pow()
 
 //     printf("Enter a number: ");
@@ -176,9 +176,9 @@ void main(){
 
 //     // Find sum of each digit raised to the power of count
 //     temp = num;
-//     while(temp > 0){
-//         digit = temp % 10;
-//         sum = sum + pow(digit, count);
+//     while(temp > 0){ //123
+//         digit = temp % 10; //3 //2
+//         sum = sum + pow(digit, count); //27 +8 +1 =36
 //         temp = temp / 10;
 //     }
 
@@ -324,3 +324,61 @@ void main(){
 
 
 
+// #include <stdio.h>
+// void main(){
+//     int num=5;
+//     int fact=1;
+
+    
+
+//     while (num>0)
+//     {
+//        fact=fact*num;
+//     //    num--;
+//     num=num-1;
+//     }
+//     printf("fact %d",fact);
+    
+    
+// }
+
+
+
+// prime no
+
+// #include <stdio.h>
+
+// void main(){
+
+//     int n=10;
+//     int flag=0;
+//     for (int i=2;i<n;i++){
+//         if(n%i==0){
+//             flag=1;
+//             break;;
+//         }
+
+//      }
+
+//      if(flag==0){
+//         printf("prime no");
+//      }else{
+//          printf("not a prime no");
+//      }
+
+// }
+
+
+// Fibonacci series
+
+// #include <stdio.h>
+// void main(){
+//     int n=10,first=0,second=1,next;
+
+//     for(int i=1;i<=n;i++){
+//         printf("%d ,",first);
+//         next=first+second;
+//         first=second;
+//         second=next;
+//     }
+// }

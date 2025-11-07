@@ -71,11 +71,6 @@ int main(){
 // }
 
 
-int i=0;
-do{
-    printf("%d\n",i);
-    i++;
-}while (i<-1);
 
 
 
@@ -93,8 +88,30 @@ do{
 
 
 
+int n;
+printf("Enter a number\n");
+scanf("%d",&n);
 
+for(int i=n;i>0;i--){
+    // if(i%2==0){
+    //     printf("%d is a even no\n",i);
+    // }else{
+    //     printf("%d is a odd no\n",i);
+    // }
 
+    (i%2==0)? printf("%d is a even no\n",i): printf("%d is a odd no\n",i);
+}
+
+printf("-----------------------------------------------\n");
+for(int i=1;i<n;i++){
+    // if(i%2==0){
+    //     printf("%d is a even no\n",i);
+    // }else{
+    //     printf("%d is a odd no\n",i);
+    // }
+
+    (i%2==0)? printf("%d is a even no\n",i): printf("%d is a odd no\n",i);
+}
 
 
 
@@ -106,3 +123,4 @@ do{
 
     return 0;
 }
+
