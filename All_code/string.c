@@ -9,49 +9,49 @@ char str2[20] = "Welcome";  // Initialization
 
 
 #include <stdio.h>
-
-int main() {
-    char name[50];
-    printf("Enter your name: ");
-    scanf("%s", name);  // Reads until space
-    printf("Hello, %s\n", name);
-    return 0;
-}
-
-
-#include <stdio.h>
 #include <string.h>
-#include <ctype.h>
-
 int main() {
-    char str[] = "C Language";
-    int i = 0;
-    while (str[i] != '\0') {
-        printf("%c ", str[i]);
-        i++;
-    }
-    printf("\nLength = %d\n", i);
-    printf("length function for string is strlen %d\n",strlen(str));
+    char name[5];
+   printf("Enter name:");
+   scanf("%s",&name);
+   printf("name =%s\n",name);
+   printf("1st char of name =%c\n",name[0]);
+   name[0]='R';
+   printf("name =%s\n",name);
 
-char firstname[]="keshav";
-char lastname[]="sharma";
+    // int len=strlen(name);
+    // printf("len of name=%d\n",len);
+   for(int i=0;i<strlen(name);i++){
+        printf("%d  char of name =%c\n",i,name[i]);
+   }
 
-printf("concatenation function is strcat %s\n",strcat(firstname,lastname));
-printf("compare function is strcmp %d\n",strcmp(firstname,lastname));
-char *found = strchr(firstname, 'k');
-    if (found != NULL)
-        printf("find character function is strchr %s\n", found);
-    else
-        printf("Character not found.\n");
+   char firstName[]="keshav";
+   char lastName[]="sharma";
 
-         char myname[] = "KESHAV";
-      int j = 0;
+   strcat(firstName,lastName);
+   printf("firstname = %s\n",firstName);    
+   
+   char newBoyName[50];
+   strcpy(newBoyName,firstName);
+   printf("newboy name = %s\n",newBoyName);    
 
-      while (myname[j] != '\0') {
-         myname[j] = tolower(myname[j]);  //  convert each character
-         j++;
-      }
+   
 
-    printf("%s\n", myname);
-    return 0;
+   printf("compare 2 name %d",strcmp(newBoyName,lastName));
+
+   int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+   char newName[10];
+   fgets(newName, sizeof(newName), stdin);  
+   printf("%s new name",newName);
+   
+   int count=0;
+   for(int i=0;newName[i]!='\0';i++){
+    count++;
+   }
+
+   printf("len of new name=%d",count);
+
 }
+
+
