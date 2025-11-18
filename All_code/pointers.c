@@ -1,62 +1,52 @@
+//
+
 #include <stdio.h>
-// A pointer is a variable that stores the memory address of another variable, function, or even another pointer.
+void swap(int x,int y);
+void _swap(int *x,int *y);
+void main(){
+//    int age=12;
+//    int *ptr=&age;
+//    printf("%d\n",age);
+//    printf("%u\n",&age);
+//    printf("%u\n",ptr);
+//    printf("%d\n",*ptr);
+
+// int *ptr;
+// int x;
+
+// ptr=&x;
+// *ptr=10;
+
+// printf("x=%d\n",x);
+
+// (*ptr)+=5;
+// printf("x=%d\n",x);
+// (*ptr)++;
+// printf("x=%d\n",x);
+// (*ptr)-=5;
+// printf("x=%d\n",x);
 
 
-void square(int n);
-void Pointer_square(int* n);
+int x=5,y=10;
 
-int main(){
-//     int age=22;
-//     int *ptr=&age;
-
-//    printf("age address &age=%u\n",&age);
-//    printf("poniter value ptr=%d\n",ptr);
-//    printf("value of poniter value *ptr=%d\n",*ptr);
-//    printf("address of poniter &ptr=%u\n",&ptr);
-
-//    
-//    int *ptr_;
-//    int x;
-
-//    ptr_=&x;
-//    *ptr_=10;
-
-//    printf("x =%d\n",x);
-//    printf("*ptr =%d\n",*ptr_);
-
-//     *ptr_+=3;
-//     printf("x =%d\n",x);
-//     printf("*ptr =%d\n",*ptr_);
-
-//     (*ptr_)++;
-//     printf("x =%d\n",x);
-//     printf("*ptr =%d\n",*ptr_);
-
-
-// pointer to pointer
-//  int i=12;
-//  int *ptr=&i;
-//  int **pptr=&ptr;
-
-//     printf("%d\n",**pptr);
-//     printf("%d\n",**pptr);
-
-//call by value /call by refrance
-
-int num=10;
- printf("before num= %d\n",num);
- square(num); //call by value
- printf("after square num= %d",num);
- Pointer_square(&num); // call by referance
- printf("after PointerSquare num= %d",num);
-    return 0;
+printf("1st  a= %d, b=%d\n",x,y);
+swap(x,y);  //call by value
+printf("2nd  a= %d, b=%d\n",x,y);
+_swap(&x,&y); //call by refrence
+printf("3rd  a= %d, b=%d\n",x,y);
 }
 
-void square(int n){
-    n=n*n;
-    printf("square =%d\n",n);
+void swap(int a,int b){
+    int temp=a;
+    a=b;
+    b=temp;
+
+    printf(" a= %d, b=%d\n",a,b);
 }
-void Pointer_square(int* n){
-    *n=(*n)*(*n);
-    printf("pointer square =%d\n",*n);
+void _swap(int *a,int *b){
+    int temp=*a;
+    *a=*b;
+    *b=temp;
+
+    printf(" a= %d, b=%d\n",*a,*b);
 }
