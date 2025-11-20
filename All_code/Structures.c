@@ -1,15 +1,24 @@
 #include <stdio.h>
 #include <string.h>
 
-//a struct (short for structure) is a user-defined data type that allows you to group together variables of different data types under a single name. 
+//a struct (short for structure) is a user-defined data type that allows you to group together, variables of different data types under a single name. 
 // This provides a way to create complex data structures that represent real-world entities. 
 
 
+//define 
 struct student{
     int rollno;
     float marks;
     char name[100];
 };
+
+// define
+// typedef struct {
+//     int rollNo;
+//     char name[50];
+//     float marks;
+// } Student;
+
 
 //function
 void  printInfo(struct student fn);
@@ -59,6 +68,8 @@ void main(){
 
         // funcion call
         printInfo(s1);
+        printInfo(s2);
+        printInfo(s3);
 }
 
 
